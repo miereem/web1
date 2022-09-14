@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <link rel = "stylesheet" href = "style.css">
+    <meta charset="utf-8">
+    <title>web1</title>
+</head>
+<body>
+<div class = "grid-container">
+<header id = "header">
+    Abdurasul kyzy Meerim, P32302, 3200
+</header>
+<img id = "graph" src = "../media/graph.png" >
+<br>
+<form id = "form" action = "../php/onclick.php" method="get">
+    <div id = x>
+        <span class = "variable">X:</span><br>
+        <input type = "checkbox" onclick="checkedOnClick(this, this.className)" name = "x" class = "x" id = "-2" value = "-2" checked>
+        <label for = "-2">-2</label><br>
+        <input type = "checkbox" onclick="checkedOnClick(this, this.className)" name = "x" class = "x" id = "-1.5" value = "-1.5">
+        <label for = "-1.5">-1.5</label><br>
+        <input type = "checkbox" onclick="checkedOnClick(this, this.className)" name = "x"  class = "x" id = "-1" value = "-1">
+        <label for = "-1">-1</label><br>
+        <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "x" class = "x" id = "-0.5" value = "-0.5">
+        <label for = "-0.5">-0.5</label><br>
+        <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "x" class = "x" id = "0" value = "0">
+        <label for = "0">0</label><br>
+        <input type = "checkbox" onclick="checkedOnClick(this, this.className)" name = "x"  class = "x" id = "0.5" value = "0.5">
+        <label for = "0.5">0.5</label><br>
+        <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "x" class = "x" id = "1" value = "1">
+        <label for = "1">1</label><br>
+        <input type = "checkbox" onclick="checkedOnClick(this, this.className)" name = "x"  class = "x" id = "1.5" value = "1.5">
+        <label for = "1.5">1.5</label><br>
+        <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "x" class = "x" id = "2" value = "2">
+        <label for = "2">2</label><br>
+    </div>
+
+   <div id = y>
+       <span class = "variable">Y:</span>
+       <input type = "number"  name = "y" value = '0' maxlength='4' required>
+   </div>
+
+   <div id = r>
+       <span class = "variable">R:</span><br>
+       <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "r" class = "r" id = "r1" value = "1" checked>
+       <label for = "r1">1</label><br>
+       <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "r"  class = "r" id = "r1.5" value = "1.5">
+       <label for = "r1.5">1.5</label><br>
+       <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "r" class = "r" id = "r2" value = "2">
+       <label for = "r2">2</label><br>
+       <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "r" class = "r" id = "r2.5" value = "2.5">
+       <label for = "r2.5">2.5</label><br>
+       <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "r" class = "r" id = "r3" value = "3">
+       <label for = "r3">3</label><br>
+    </div>
+
+    <input type = "submit" id = "send" value = "SEND" onclick="validateY()" >
+    <input type = "reset" value = "RESET">
+
+</form>
+<table id = "table">
+    <thead>
+    <tr>
+        <th>№</th>
+        <th>X</th>
+        <th>Y</th>
+        <th>R</th>
+        <th>Result</th>
+        <th>Current time</th>
+        <th>Execution time</th>
+    </tr>
+    </thead>
+</table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../php/onclick.php"></script>
+<script src="../php/table.php"></script>
+<script src="../js/validation.js"></script>
+<script src="../js/checkbox.js"></script>
+</body>
+</html>
