@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <link rel = "stylesheet" href = "style.css">
+    <meta charset="utf-8">
+    <title>web1</title>
+</head>
+<body id = "body">
+<div class = "grid-container">
+<header id = "header">
+    <div id = "header-image">
+        <img src="sailor.jpeg"/>
+        <h2 id = "text">
+            Abdurasul kyzy Meerim
+            <br>
+            P32302
+            <br>
+            3200
+        </h2>
+    </div>
+
+
+
+</header>
+    <div id = "graph-grid">
+        <svg id = "graph" height="420" width="420" onMouseOver="document.getElementById('sound').play()"
+             onMouseOut="document.getElementById('sound').pause()" alignment = "center">
+            <circle cx="200" cy="200" r="180" stroke="pink" stroke-width="3" fill="none" />
+            <polygon points="0,0 400,0 400,200 200,200 200,400 0,400" style="fill:white;stroke:white;stroke-width:2" />
+            <line x1="10" y1="200" x2="200" y2="95" style="stroke:pink;stroke-width:3" />
+            <text x="203" y="100" fill="red">R/2</text>
+            <text x="203" y="25" fill="red">R</text>
+            <text x="377" y="195" fill="red">R</text>
+            <text x="280" y="195" fill="red">R/2</text>
+
+
+            <line x1="10" y1="200" x2="10" y2="295" style="stroke:pink;stroke-width:3" />
+
+            <line x1="200" y1="295" x2="10" y2="295" style="stroke:pink;stroke-width:3" />
+
+            <line x1="200" y1="0" x2="200" y2="410" style="stroke:red;stroke-width:2" />
+            <line x1="0" y1="200" x2="410" y2="200" style="stroke:red;stroke-width:2" />
+
+            <line x1="400" y1="190" x2="410" y2="200" style="stroke:red;stroke-width:2" />
+            <line x1="400" y1="210" x2="410" y2="200" style="stroke:red;stroke-width:2" />
+            <line x1="200" y1="410" x2="190" y2="400" style="stroke:red;stroke-width:2" />
+            <line x1="200" y1="410" x2="210" y2="400" style="stroke:red;stroke-width:2" />
+
+            <line x1="200" y1="0" x2="190" y2="10" style="stroke:red;stroke-width:2" />
+            <line x1="0" y1="200" x2="10" y2="210" style="stroke:red;stroke-width:2" />
+            <line x1="200" y1="0" x2="210" y2="10" style="stroke:red;stroke-width:2" />
+            <line x1="0" y1="200" x2="10" y2="190" style="stroke:red;stroke-width:2" />
+
+        </svg>
+    </div>
+
+    <br>
+<form id = "form" action = "onclick.php" method="get">
+    <div id = "panel">
+        <div id = x class = "variable">
+            <span class = "variable">X:</span><br>
+            <input type = "checkbox" onclick="checkedOnClick(this, this.className)" name = "x" class = "x" id = "-2" value = "-2" checked>
+            <label for = "-2">-2</label><br>
+            <input type = "checkbox" onclick="checkedOnClick(this, this.className)" name = "x" class = "x" id = "-1.5" value = "-1.5">
+            <label for = "-1.5">-1.5</label><br>
+            <input type = "checkbox" onclick="checkedOnClick(this, this.className)" name = "x"  class = "x" id = "-1" value = "-1">
+            <label for = "-1">-1</label><br>
+            <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "x" class = "x" id = "-0.5" value = "-0.5">
+            <label for = "-0.5">-0.5</label><br>
+            <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "x" class = "x" id = "0" value = "0">
+            <label for = "0">0</label><br>
+            <input type = "checkbox" onclick="checkedOnClick(this, this.className)" name = "x"  class = "x" id = "0.5" value = "0.5">
+            <label for = "0.5">0.5</label><br>
+            <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "x" class = "x" id = "1" value = "1">
+            <label for = "1">1</label><br>
+            <input type = "checkbox" onclick="checkedOnClick(this, this.className)" name = "x"  class = "x" id = "1.5" value = "1.5">
+            <label for = "1.5">1.5</label><br>
+            <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "x" class = "x" id = "2" value = "2">
+            <label for = "2">2</label><br>
+        </div>
+
+        <div id = y class = "variable">
+            <span >Y:</span>
+            <input type = "float"  name = "y" value = '0' max='5' min="-3" required>
+        </div>
+
+        <div id = r class = "variable">
+            <span >R:</span><br>
+            <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "r" class = "r" id = "r1" value = "1" checked>
+            <label for = "r1">1</label><br>
+            <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "r"  class = "r" id = "r1.5" value = "1.5">
+            <label for = "r1.5">1.5</label><br>
+            <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "r" class = "r" id = "r2" value = "2">
+            <label for = "r2">2</label><br>
+            <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "r" class = "r" id = "r2.5" value = "2.5">
+            <label for = "r2.5">2.5</label><br>
+            <input type = "checkbox" onclick="checkedOnClick(this, this.className)"  name = "r" class = "r" id = "r3" value = "3">
+            <label for = "r3">3</label><br>
+        </div>
+
+    </div>
+
+
+    <input class = "button" type = "submit" id = "send" value = "SEND">
+    <button class = "button" type = "reset" id = "reset" value = "RESET">RESET</button>
+
+
+</form>
+<table id = "table">
+    <thead>
+    <tr>
+        <th>№</th>
+        <th>X</th>
+        <th>Y</th>
+        <th>R</th>
+        <th>Result</th>
+        <th>Current time</th>
+        <th>Execution time</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="submit.js"></script>
+<script src="checkbox.js"></script>
+<script src="validation.js"></script>
+<audio id="sound" src="sound.wav"></audio>
+</body>
+</html>
