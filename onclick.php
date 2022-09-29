@@ -1,19 +1,37 @@
 <?php
 session_start();
+
+function validate_number($val, $min, $max): bool
+{
+    return isset($val) && is_numeric($val) && ($val>=$min) && ($val<=$max);
+}
+
 $start = microtime(true);
-$x = (float)(@$_GET['x']);
-$y = (float)(@$_GET['y']);
-$r = (float)(@$_GET['r']);
+$x = (@$_GET['x']);
+$y = (@$_GET['y']);
+$r = (@$_GET['r']);
 $timezone= @$_GET["timezone"];
+
+if(validate_number($x,-2,2) && validate_number($y,-3,5) && validate_number($r,1,3) ){
+    $x = (float)($x);
+    $y = (float)($y);
+    $r = (float)($r);
+} else {
+    http_response_code(400);
+    echo "Invalid parameters";
+    return;
+}
+
 
 function inPolygon($x, $y, $r)
 {
-    return ($x <= 0 and $x >= -$r and $y >= 0 and $y <= $r / 2 and $r / 2 + 0.5 * $x >= $y)
-        or ($x >= 0 and $x <= $r / 2 and $y >= 0 and $y <= $r / 2 and $x * $x + $y * $y <= $r * $r / 4)
-        or ($x >= 0 and $x <= $r / 2 and $y <= 0 and $y >= -$r);
+    return ($x <= 0 and $x >= -$r and $y >= 0 and $y <= $r/2 and $y>=-2*$x-$r)
+        or ($x >= 0 and $x <= $r and $y <= 0 and $y <= $r and sqrt($x*$x+$y*$y)<=$r/2)
+        or ($x <= 0 and $x <= $r and $y <= 0 and $y <= $r/2);
 }
 
-$attempt = array('x' => $x, 'y' => $y, 'r' => $r, 'result' => inPolygon($x, $y, $r), 'current_time' => date( "G:i:s j/m/o", time()-$timezone*60), 'execution_time' => round(microtime(true) - $start, 5));
+
+$attempt = array('x' => $x, 'y' => $y, 'r' => $r, 'result' => inPolygon($x, $y, $r), 'current_time' => date( "G:i:s j/m/o", time()-$timezone*60), 'execution_time' => round(microtime(true) - $start,6));
 
 if (!isset($_SESSION['attempts'])) {
     $_SESSION['attempts'] = array($attempt);

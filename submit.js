@@ -1,4 +1,4 @@
-var y = document.querySelector("#y");
+var y = document.querySelector("#yvalue");
 
 
 $(document).ready(function(){
@@ -20,6 +20,16 @@ $(document).ready(function(){
 $("#form").on("submit", function(event){
     event.preventDefault();
 
+
+    console.log("validating y" );
+    console.log('y: ', y.value);
+    removeValidation();
+
+    if(!validateY(y)){
+        console.log("request canceled")
+        return
+    }
+
     $.ajax({
         url: 'onclick.php',
         method: "GET",
@@ -39,6 +49,7 @@ $("#form").on("submit", function(event){
 });
 
 $("#reset").on("click",function(){
+    removeValidation();
     $.ajax({
         url: 'table_reset.php',
         type: "GET",
